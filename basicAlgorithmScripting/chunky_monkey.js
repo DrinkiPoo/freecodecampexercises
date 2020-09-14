@@ -50,3 +50,27 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d", 5], 2));
 
 
 //both ways I have used two loops and i think that i should be able to do this with just one. 
+/* this solution uses only one loop, but uses more conditionals
+
+let arr = [1,2,3,4,5,6,7,8,9,10];
+let num = 3;
+
+let temp = [];
+let final = [];
+
+for(let i = 0; i < arr.length; i++){
+  if(i % num != num -1){
+    temp.push(arr[i]);
+  }
+  else {
+    temp.push(arr[i]);
+    final.push(temp);
+    temp = [];
+  }
+}
+if(temp.length !== 0){
+  final.push(temp);
+}
+
+console.log(final);
+*/
