@@ -25,6 +25,7 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3); //returns [1,1]
 
 //this is one of the solutions from FCC
 //but it uses .filter() method and hence does it chance the original array
+// I am stupid. the filter() method, turns out, creates new arrays. I am dumb!!
 // looks neat nonetheless
 
 const destroyer = (arr, ...valsToRemove) => arr.filter(elem => !valsToRemove.includes(elem));
