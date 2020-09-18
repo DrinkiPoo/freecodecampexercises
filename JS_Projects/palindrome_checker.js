@@ -32,3 +32,40 @@ palindrome("eye");
 //but it runs several string methods on the entire string even before comparing
 //this wont be efficient for larg text strings
 //let me  write something better
+
+
+function palindrome(str) {
+//i want to compare one character at a time
+//so it wont be resource heavy
+//if the character isnt alphanumeric, skip it 
+
+let front = 0;
+let back = str.length -1;
+
+while (front <= back){
+  if(str[front].match(/[\W_]/)){
+    front++;
+    continue;
+    //if front is \W or _, then f++ and get to the next iteration
+  }
+
+  if(str[back].match(/[\W_]/)){
+    back--;
+    continue;
+    //these two ifs will make sure that we are comparing the right
+    //characters and not non-alphanumeric ones (\W or the underscore)
+  }
+
+  if(str[front].toLowerCase() !== str[back].toLowerCase()){
+    return false;
+  }
+
+  front++;
+  back --;
+}
+
+return true; // if the while loop finishes, then it must be a palindrome
+
+}
+
+//this is much better!
